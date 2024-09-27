@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurssitoteutus</title>
+    <link rel="stylesheet" href="tyyli.css"> <!-- Tyylitiedosto -->
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Etusivu</a>
+        <a href="kurssi.html">Kurssi</a>
+        <a href="toteutus.html">Toteutus</a>
+    </nav>
+    <p>Tällä sivulla on kerrottu toteutuksesta.</p>
+        
+    <div id="vastaus"></div>
+
+    <script>
+        // Haetaan JSON-tiedot Mocky-palvelimelta
+        fetch('https://run.mocky.io/v3/23f8cd64-8d42-4192-abe9-beb3d86abe5e')
+        .then(response => {
+            console.log('Fetch response:', response);  // Katso, tuleeko vastaus palvelimelta
+            if (!response.ok) {
+                throw new Error('Verkkovirhe, status: ' + response.status);
+            }
+            return response.json();
+            })
+        .then(data => {
+            console.log('Data:', data); // Tarkista, tulostuuko tämä konsoliin
+            var teksti = ""; 
+            teksti += "<h1>" + data.toteutuksen_nimi + "</h1>";
+            teksti += "<p>Osallistujia: " + data.osallistujat_lkm + "</p>";
+            
+            teksti += "<h3>Osallistujat:</h3><ul>";
+            for (var i = 0; i < data.osallistujat.length; i++) {
+                teksti += "<li>" + data.osallistujat[i] + "</li>";
+            }
+            teksti += "</ul>";
+
+            teksti += "<p>Alkaa: " + data.alkamis_aika + "</p>";
+            teksti += "<p>Loppuu: " + data.loppumis_aika + "</p>";
+            teksti += "<p>Kesto viikkoina: " + data.kesto_viikkoina + "</p>";
+
+            teksti += "<img src='" + data.kuva + "' alt='Tässä on olevinaan joku kuva' style='max-width: 100%; height: auto;'/>";
+            
+            document.getElementById("vastaus").innerHTML = teksti;
+        })
+        .catch(error => {
+            console.log('Error:', error);
+            document.getElementById("vastaus").innerHTML = "<p>Tietoja ei voitu hakea</p>";
+        });
+    </script>
+</body>
+</html>
