@@ -1,5 +1,5 @@
 // Fetch JSON data from the Mocky service
-fetch('https://run.mocky.io/v3/c2ab10c6-caa6-49a1-aafd-efaf46c0a793')
+fetch('https://veeraletho.github.io/JSON1/kurssitiedot.JSON')
     .then(function (response) {
     // Muunnetaan vastaus JSON-muotoon
     return response.json(); 
