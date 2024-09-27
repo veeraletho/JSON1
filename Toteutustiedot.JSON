@@ -1,0 +1,17 @@
+{
+    "toteutuksen_nimi": "Digitekniikat",
+    "Kurssikodi": "DIG007AS2A-3012",
+    "Opintopisteet": "5",
+    "osallistujat_lkm": 5,
+    "osallistujat": [
+      "Matti Meikäläinen",
+      "Onni Opiskelija",
+      "Teemu Testaaja",
+      "Emmi Esimerkki",
+      "Pekka Pouta"
+    ],
+    "alkamis_aika": "2024-08-19",
+    "loppumis_aika": "2024-10-11",
+    "kesto_viikkoina": 8,
+    "kuva": "https://jaakkola.github.io/json/digi.JPG"
+  }
