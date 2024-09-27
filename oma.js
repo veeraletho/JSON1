@@ -1,5 +1,5 @@
 // Fetch JSON data from the Mocky service
-fetch('https://run.mocky.io/v3/ba598b23-3703-4d58-86a2-46b589cd3910')
+fetch('https://run.mocky.io/v3/c2ab10c6-caa6-49a1-aafd-efaf46c0a793')
     .then(function (response) {
     // Muunnetaan vastaus JSON-muotoon
     return response.json(); 
