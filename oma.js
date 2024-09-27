@@ -3,7 +3,7 @@ fetch('https://run.mocky.io/v3/c2ab10c6-caa6-49a1-aafd-efaf46c0a793')
     .then(function (response) {
     // Muunnetaan vastaus JSON-muotoon
     return response.json(); 
-})
+    })
     // Käsitellään muunnettu (eli JSON muotoinen) vastaus
     .then(function (responseJson) {
         // Kutsutaan funktiota ja välitetään sille json-vastaus
@@ -20,6 +20,7 @@ fetch('https://run.mocky.io/v3/c2ab10c6-caa6-49a1-aafd-efaf46c0a793')
         teksti = "<h1>" + data.otsikko + "</h1>";
 
         // tähän tulee muiden tietojen käsittely kohta
+        
         teksti = teksti + "<p>" + data.kuvaus + "</p>";
         teksti = teksti + "<p><img src='" + data.kuva + "'alt='kuva' ></p>";
         teksti = teksti + "<h3>Opintojakso " + data.opintojakso.nimi + " " + data.opintojakso.tunnus + " " + data.opintojakso.opintopisteet + " op" + "</h3>";
@@ -37,10 +38,9 @@ fetch('https://run.mocky.io/v3/c2ab10c6-caa6-49a1-aafd-efaf46c0a793')
         }
 
         teksti += "</ul>";
+
         
         // teksti-muuttujan sisällön tulostus
         document.getElementById("vastaus").innerHTML = teksti;
     }
         
-
-
