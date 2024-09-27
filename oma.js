@@ -11,7 +11,7 @@ fetch('https://run.mocky.io/v3/ba598b23-3703-4d58-86a2-46b589cd3910')
         })
         
         // Jos tuli jokin virhe
-        .catch(function (error) { document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
+        .catch(function (error) {document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
         })
     function kerro(data){
         var teksti = ""; // määritellään muuttuja, johon tulostettava tieto kerätään
@@ -22,7 +22,7 @@ fetch('https://run.mocky.io/v3/ba598b23-3703-4d58-86a2-46b589cd3910')
         // tähän tulee muiden tietojen käsittely kohta
         
         teksti = teksti + "<p>" + data.kuvaus + "</p>";
-        teksti = teksti + "<p><img src='" + data.kuva + "' alt='kuva' ></p>";
+        teksti = teksti + "<p><img src='" + data.kuva + "'alt='kuva' ></p>";
         teksti = teksti + "<h3>Opintojakso " + data.opintojakso.nimi + " " + data.opintojakso.tunnus + " " + data.opintojakso.opintopisteet + " op" + "</h3>";
         
         // For-lause sisällön hakemiseen
