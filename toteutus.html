@@ -19,14 +19,11 @@
 
     <script>
         // Haetaan JSON-tiedot Mocky-palvelimelta
-        fetch('https://run.mocky.io/v3/23f8cd64-8d42-4192-abe9-beb3d86abe5e')
-        .then(response => {
-            console.log('Fetch response:', response);  // Katso, tuleeko vastaus palvelimelta
-            if (!response.ok) {
-                throw new Error('Verkkovirhe, status: ' + response.status);
-            }
+        fetch('https://run.mocky.io/v3/5112cb98-4dd1-46be-a29e-100139ad4df7')
+            .then(response => {
+            console.log('Response:', response);
             return response.json();
-            })
+        })
         .then(data => {
             console.log('Data:', data); // Tarkista, tulostuuko tämä konsoliin
             var teksti = ""; 
