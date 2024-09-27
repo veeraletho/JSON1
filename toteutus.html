@@ -25,7 +25,7 @@
             return response.json();
         })
         .then(data => {
-            console.log('Data:', data); // Tarkista, tulostuuko tämä konsoliin
+            console.log('Data:', data);
             var teksti = ""; 
             teksti += "<h1>" + data.toteutuksen_nimi + "</h1>";
             teksti += "<p>Osallistujia: " + data.osallistujat_lkm + "</p>";
