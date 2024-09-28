@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tapahtumat</title>
+    <link rel="stylesheet" href="style.css"> <!-- Tyylitiedosto -->
+</head>
+<body>
+    
+    <nav>
+        <a href="saa.html">Sää</a>
+        <a href="tapahtumat.html">Tapahtumat</a>
+    </nav>
+    <h1 style="text-align: center;">Tervetuloa</h1>
+    <p>.</p>
+
+    <div id="vastaus">
+
+        <script> 
+        fetch('https://api.visittampere.com/api/v1/visittampere/event/published/all/?format=json&lang=fi')
+
+                // Muunnetaan vastaus JSON muotoon
+                .then(function (response) {
+                return response.json();
+                })
+                // Käsitellään muunnettu (eli JSON muotoinen) vastaus
+                .then(function (responseJson) {
+                
+                // Kutsutaan funktiota ja välitetään sille json-vastaus
+                tapahtumat(responseJson)
+                })
+                
+                // Jos tuli jokin virhe
+                .catch(function (error) {
+                    document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan </p>"+ error;
+                })
+
+
+        function tapahtumat(data) {
+                var teksti = "";
+                teksti = "<h1>Tampereella tapahtuu</h1>";
+                for (var i = 0; i < data.length; i++) {
+                teksti = teksti + "<h3>" + data[i].title + "</h3>";
+                teksti = teksti + "<p>" + data[i].description + "</p>";
+                teksti = teksti + "<p> <a href=" + data[i].url + ">" + data[i].url + "</a></p>";
+                }
+            document.getElementById("vastaus").innerHTML = teksti;
+            }
+
+        </script>   
+    </div>
+
+        <div id="vastaus">
+
+        <script> 
+        fetch('https://api.visittampere.com/api/v1/visittampere/event/published/all/?format=json&lang=fi')
+
+                // Muunnetaan vastaus JSON muotoon
+                .then(function (response) {
+                return response.json();
+                })
+                // Käsitellään muunnettu (eli JSON muotoinen) vastaus
+                .then(function (responseJson) {
+                
+                // Kutsutaan funktiota ja välitetään sille json-vastaus
+                tapahtumat(responseJson)
+                })
+                
+                // Jos tuli jokin virhe
+                .catch(function (error) {
+                    document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan </p>"+ error;
+                })
+
+
+        function tapahtumat(data) {
+                var teksti = "";
+                teksti = "<h1>Tampereella tapahtuu</h1>";
+                for (var i = 0; i < data.length; i++) {
+                teksti = teksti + "<h3>" + data[i].title + "</h3>";
+                teksti = teksti + "<p>" + data[i].description + "</p>";
+                teksti = teksti + "<p> <a href=" + data[i].url + ">" + data[i].url + "</a></p>";
+                }
+            document.getElementById("vastaus").innerHTML = teksti;
+            }
+
+        </script>   
+    </div>
+
+</body>
+</html>
+
+
+
